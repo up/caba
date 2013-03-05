@@ -19,7 +19,7 @@
 // ==ClosureCompiler==
 // @compilation_level SIMPLE_OPTIMIZATIONS
 // @output_file_name default.js
-// @externs_url http://closure-compiler.googlecode.com/svn/trunk/contrib/externs/jquery-1.6.js
+// @externs_url http://closure-compiler.googlecode.com/svn/trunk/contrib/externs/jquery-1.8.js
 // @output_wrapper "(function() {%output%}) 
 // ==/ClosureCompiler==
 
