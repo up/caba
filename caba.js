@@ -6,18 +6,18 @@
 
 /*
  * Usage: 
- *   <canvas 
- *     src="trees.jpg" 
- *     class="caba" 
- *     data-caba-blur-factor="5" 
- *     data-caba-opacity="0.7" 
- *     width="500" 
- *     height="375">
- *  </canvas>
-*/
+ *  <canvas  
+ *    class="caba" 
+ *    data-caba-src="trees.jpg" 
+ *    data-caba-blur-factor="4" 
+ *    data-caba-opacity="0.7" 
+ *    width="500" 
+ *    height="375" 
+ *  ></canvas>
+ */
 
 // ==ClosureCompiler==
-// @compilation_level SIMPLE_OPTIMIZATIONS
+// @compilation_level ADVANCED_OPTIMIZATIONS
 // @output_file_name default.js
 // @externs_url http://closure-compiler.googlecode.com/svn/trunk/contrib/externs/jquery-1.8.js
 // @output_wrapper "(function() {%output%}) 
@@ -72,7 +72,8 @@
         self = this,
         $self = $(this),
         factor = $self.data('caba-blur-factor') || 4,
-        opacity = $self.data('caba-opacity') || 0.7
+        opacity = $self.data('caba-opacity') || 0.7,
+        src = $self.data('caba-src') || ''
       ;
       $self.css({
         'display': 'inline-block',
@@ -86,11 +87,11 @@
       });
 
       img = new Image();
+      img.src = src;
       img.onload = function () {
         cabaimg = new Caba(self, this);
         cabaimg.blur(factor);
       };
-      img.src = $(this).attr("src");
     });
   });
   
